@@ -18,4 +18,8 @@ public class Cell {
     public static Cell withTree(Tree tree) {
         return new Cell(tree);
     }
+
+    public Plant getPlant() {
+        return plant;
+    }
 }
