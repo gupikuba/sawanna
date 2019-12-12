@@ -1,8 +1,13 @@
-package pl.altkom.plants;
+package pl.altkom.savanna_items.plants;
 
 public abstract class Tree implements Plant {
     int height;
     int branches;
+
+    public Tree(int height, int branches) {
+        this.height = height;
+        this.branches = branches;
+    }
 
     @Override
     public void grow() {
@@ -17,5 +22,10 @@ public abstract class Tree implements Plant {
     @Override
     public void beEaten() {
         branches--;
+    }
+
+    @Override
+    public boolean canBeEaten() {
+        return branches > 0;
     }
 }
