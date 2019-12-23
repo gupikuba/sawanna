@@ -8,7 +8,7 @@ public class Acacia extends Tree {
     private static Type type = Type.Acacia;
 
     public Acacia() {
-        super(4, 8);
+        super(4, 12);
         num = ++n;
     }
 
@@ -21,5 +21,4 @@ public class Acacia extends Tree {
     public String toString() {
         return "Akacja "+num;
     }
-    public String shortName(){return "|A|";}
 }

@@ -18,15 +18,15 @@ public class Giraffe extends Animal {
 
     @Override
     //if giraffes move like other animals they die very fast
-    //so if giraffe is in 9 cells range from cell where his food is
+    //so if giraffe is in 11 cells range from cell where his food is
     //then he goes there if not then animal.move() function is called
     public void move(Savanna savanna) {
         int x = super.getCell().getX(), y = super.getCell().getY(),
                 length = savanna.getRows(), width = savanna.getCols();
 
-        for(int i = -9; i < 9; i++){
-            for(int j = -9; j < 9; j++){
-                if(Math.abs(i)+Math.abs(j)<=9 && x+j>=0 && x+j<width
+        for(int i = -11; i < 11; i++){
+            for(int j = -11; j < 11; j++){
+                if(Math.abs(i)+Math.abs(j)<=11 && x+j>=0 && x+j<width
                         && y+i>=0 && y+i<length && canEat(super.getCell().getPlant().getType())){
                     savanna.getCells()[y+i][x+j].moveAnimal(this);
                     return;
@@ -57,7 +57,7 @@ public class Giraffe extends Animal {
 
     @Override
     public boolean canBeEaten() {
-        return false;
+        return super.isAlive();
     }
 
     @Override

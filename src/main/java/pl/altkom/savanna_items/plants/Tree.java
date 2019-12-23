@@ -12,10 +12,10 @@ public abstract class Tree implements Plant {
     @Override
     public void grow() {
         height += 1;
-        if(height<5){
+        if(height<=5){
             branches++;
         }else {
-            branches+=2;
+            branches+=3;
         }
     }
 

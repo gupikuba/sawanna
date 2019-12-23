@@ -40,7 +40,7 @@ public class Lion extends Animal {
     }
 
     public boolean canEat(Type type){
-        if(type == Type.Antelope)
+        if(type == Type.Antelope || type==Type.Giraffe)
             return true;
         return false;
     }
