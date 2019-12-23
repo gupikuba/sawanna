@@ -7,6 +7,7 @@ import pl.altkom.savanna_items.animals.Lion;
 import java.util.*;
 
 /*
+Kuba Cyran
 the program simulates life in the savanna
 in order rows, columns, number of trees and days are given as main function arguments
  */
