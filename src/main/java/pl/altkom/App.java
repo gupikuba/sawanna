@@ -6,27 +6,27 @@ import pl.altkom.savanna_items.animals.Lion;
 
 import java.util.*;
 
+/*
+the program simulates life in the savanna
+in order rows, columns, number of trees and days are given as main function arguments
+ */
 public class App
 {
-    public static void main( String[] args )
-    {
-        List<String >l = new ArrayList<>();
-        String s = "fidjfid", s2 = "kuba";
-        l.add(s);
-        l.add(s2);
-        l.add(s);
-        System.out.println(l);
-        for(int i = 0;i<l.size(); i++){
-            System.out.println(l.get(i));
-            if(i==1)l.add(l.get(i));
-        }
-        List<String>temp = new ArrayList<>();
-        for(int i = 2; i<l.size(); i++)
-            temp.add(l.get(i));
-        l = temp;
-        System.out.println(l);
+    public static void main( String[] args ) {
+        try{
+            int rows = Integer.parseInt(args[0]), cols = Integer.parseInt(args[1]),
+                    trees = Integer.parseInt(args[2]), days = Integer.parseInt(args[3]);
 
-        System.out.println(l);
+            Savanna savanna = new Savanna(rows, cols, trees);
+            System.out.println("stan poczatkowy: \n#############################################################################################\n"
+                    + savanna.summary() +
+                    "#############################################################################################\n");
+
+            for (int i = 0; i < days; i++)
+                savanna.nextWeek();
+        }catch (Exception e){
+            System.out.println("Błąd. Niepoprawne argumenty");
+        }
 
     }
 }

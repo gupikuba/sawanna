@@ -6,9 +6,14 @@ import pl.altkom.savanna_items.Food;
 import pl.altkom.savanna_items.Type;
 
 public class Antelope extends Animal implements Food {
+    private static int n = 0;
+    private int num;
     private static Type type = Type.Antelope;
+
+    //every antelope has his own number
     public Antelope(Cell cell) {
         super(cell);
+       num = ++n;
     }
 
     @Override
@@ -24,19 +29,20 @@ public class Antelope extends Animal implements Food {
     }
 
     @Override
-    public void nextWeek() {
-        super.nextWeek();
-        if(super.getAge() > 15 * Savanna.YEAR)
-            super.die();
-    }
-
-    @Override
     public boolean canBeEaten() {
         return super.isAlive();
     }
 
     @Override
     public Animal reproduction() {
-        return new Antelope(super.getCell());
+        Antelope a = new Antelope(super.getCell());
+        //System.out.println("\n(@)(@)(@) rodzi się "+ a + " (@)(@)(@)\n");
+        return a;
     }
+
+    @Override
+    public String toString() {
+        return "antylopa " + num;
+    }
+
 }

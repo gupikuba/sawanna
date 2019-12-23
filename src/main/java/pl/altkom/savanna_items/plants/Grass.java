@@ -5,10 +5,11 @@ import pl.altkom.savanna_items.Type;
 public class Grass implements Plant {
     private static Type type= Type.Grass;
 
-    private int size = 4;
+    public Grass(){}
+    private int amount = 10;
     @Override
     public void grow() {
-        size += 2;
+        amount += 4;
     }
 
     @Override
@@ -18,12 +19,15 @@ public class Grass implements Plant {
 
     @Override
     public void beEaten() {
-        size -= 2;
+        amount -= 1;
     }
+
 
     @Override
     public boolean canBeEaten() {
-        return size >= 2;
+        if(amount==0)
+            System.out.println("\n### za malo trawy do jedzenia ###\n");
+        return amount >= 1;
     }
 
 }

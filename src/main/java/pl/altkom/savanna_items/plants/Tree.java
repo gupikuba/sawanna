@@ -26,6 +26,8 @@ public abstract class Tree implements Plant {
 
     @Override
     public boolean canBeEaten() {
+        if(branches==0)
+            System.out.println("\n### "+this.toString()+" nie ma galezi do zjedzenia ###\n");
         return branches > 0;
     }
 }
